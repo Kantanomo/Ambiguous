@@ -12,7 +12,6 @@ namespace Ambiguous
         public static XmlTextReader xr;
         public static List<Control> Controls = new List<Control>();
         public static List<string> Revisions = new List<string>();
-
         public static string Class;
         public static string Author;
         public static string Version;

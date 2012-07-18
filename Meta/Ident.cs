@@ -32,6 +32,8 @@ namespace Ambiguous
                 comboBox1.Items.Add(s);
             comboBox1.Items.Add("Null");
             label1.Text = Label;
+            if (Program.Devmode)
+                button2.Visible = true;
         }
         public void Update(int ChunkModifier)
         {
@@ -74,6 +76,11 @@ namespace Ambiguous
                 Poke.PokeIdent(comboBox1.SelectedItem.ToString(), (uint)Map.Tags[comboBox2.SelectedItem.ToString(), comboBox1.SelectedItem.ToString()].Identifier, (Base + ChunkModifier + Offset), Map);
             else
                 Poke.PokeIdent("FFFF", 0xFFFFFFFF, (Base + ChunkModifier + Offset), Map);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText("halo2.exe+47CD54 / " + Offset.ToString("X"));
         }
     }
 }

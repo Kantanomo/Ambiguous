@@ -13,20 +13,21 @@ namespace Ambiguous
         {
             if (GoodToGo(Map))
             {
+                int temp = H2.SecondaryMagic();
                 if (type == typeof(float))
-                    H2.H2Mem.WriteFloat(false, Offset - H2.SecondaryMagic(), float.Parse(Value.ToString()));
+                    H2.H2Mem.WriteFloat(false, Offset - temp, float.Parse(Value.ToString()));
                 if (type == typeof(byte))
-                    H2.H2Mem.WriteByte(false, Offset - H2.SecondaryMagic(), byte.Parse(Value.ToString()));
+                    H2.H2Mem.WriteByte(false, Offset - temp, byte.Parse(Value.ToString()));
                 if (type == typeof(short))
-                    H2.H2Mem.WriteShort(false, Offset - H2.SecondaryMagic(), short.Parse(Value.ToString()));
+                    H2.H2Mem.WriteShort(false, Offset - temp, short.Parse(Value.ToString()));
                 if (type == typeof(ushort))
-                    H2.H2Mem.WriteUShort(false, Offset - H2.SecondaryMagic(), ushort.Parse(Value.ToString()));
+                    H2.H2Mem.WriteUShort(false, Offset - temp, ushort.Parse(Value.ToString()));
                 if (type == typeof(int))
-                    H2.H2Mem.WriteInt(false, Offset - H2.SecondaryMagic(), int.Parse(Value.ToString()));
+                    H2.H2Mem.WriteInt(false, Offset - temp, int.Parse(Value.ToString()));
                 if (type == typeof(uint))
-                    H2.H2Mem.WriteUInt(false, Offset - H2.SecondaryMagic(), uint.Parse(Value.ToString()));
+                    H2.H2Mem.WriteUInt(false, Offset - temp, uint.Parse(Value.ToString()));
                 if (type == typeof(long))
-                    H2.H2Mem.WriteLong(false, Offset - H2.SecondaryMagic(), long.Parse(Value.ToString()));
+                    H2.H2Mem.WriteLong(false, Offset - temp, long.Parse(Value.ToString()));
             }
         }
         public static void PokeIdent(string Class, uint Ident, int Offset, Map Map)

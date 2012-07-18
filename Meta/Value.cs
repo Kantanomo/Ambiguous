@@ -31,6 +31,8 @@ namespace Ambiguous
             textBox1.Text = Value.ToString();
             if((int)value == 0)
             Update(0);
+            if (Program.Devmode)
+                button2.Visible = true;
         }
         public Value(string Label, Type Type, object Value,int length, int Base, int Offset, Map Map)
         {
@@ -71,6 +73,11 @@ namespace Ambiguous
         private void button1_Click(object sender, EventArgs e)
         {
             Poke.PokeValue(Type, (object)textBox1.Text, (Base + Offset + ChunkModifier),Map);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText("halo2.exe+47CD54 / " + Offset.ToString("X"));
         }
     }
 }

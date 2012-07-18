@@ -37,6 +37,8 @@ namespace Ambiguous
             if (Type == typeof(short)) BitSize = 16;
             if (Type == typeof(int)) BitSize = 32;
             Update(0);
+            if (Program.Devmode)
+                button2.Visible = true;
         }
         public Bitmask(string Label,int index, Type Type, List<string> Items, List<int> Values, int Base, int Offset, Map Map)
         {
@@ -123,6 +125,11 @@ namespace Ambiguous
                 }
             }
             return bitArray;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText("halo2.exe+47CD54 / " + Offset.ToString("X"));
         }
     }
 }

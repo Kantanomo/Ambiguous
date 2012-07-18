@@ -36,6 +36,8 @@ namespace Ambiguous
                 comboBox1.Items.Add(s);
             if (Index == 0)
                 Update(0);
+            if (Program.Devmode)
+                button2.Visible = true;
         }
         public void Update(int ChunkModifier)
         {
@@ -64,6 +66,11 @@ namespace Ambiguous
             for (int i = 0; i < Values.Count; i++)
                 if (Items[i] == comboBox1.SelectedItem.ToString())
                     Index = Values[i];
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText("halo2.exe+47CD54 / " + Offset.ToString("X"));
         }
     }
 }
